@@ -1,0 +1,7 @@
+# used for id
+syntax:
+    tag [attribute = 'value']
+-----------------------
+. used for class
+syntax:
+    tag [attribute = 'value']
