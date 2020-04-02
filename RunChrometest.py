@@ -1,10 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.support.select import Select
 import os
 import time
-from Basic.config1 import *
+from config1 import *
 
 class Skygeek:
 
@@ -43,12 +40,6 @@ class Skygeek:
         time.sleep(5)
         pricevalue = driver.find_element_by_xpath('//*[@id="hot-bulk-vendor-product"]/div[1]/div/div/div/table/tbody/tr/td[15]')
         print(pricevalue.text)
-        '''actions = ActionChains(driver)
-        actions.double_click(pricevalue).perform()
-        # pricevalue.clear()
-        # pricevalue.send_keys('10')
-        # pricevalue.send_keys(Keys.Enter)'''
-        # element = driver.find_element_by_id("some-random-number")
         driver.execute_script("arguments[0].innerText = '12'", pricevalue)
         time.sleep(5)
         driver.find_element_by_xpath('//*[@id="hot-bulk-vendor-product"]/div[1]/div/div/div/table/tbody/tr/td[14]').click()
