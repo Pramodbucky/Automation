@@ -1,4 +1,4 @@
-# used for id
+# used for id: Update every rule and important note in this file
 syntax:
     tag [attribute = 'value']
 -----------------------
