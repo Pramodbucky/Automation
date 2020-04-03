@@ -1,7 +1,63 @@
-# used for id: Update every rule and important note in this file
+URL: https://learn.letskodeit.com/p/practice
+Update every rule and important note in this file
+Elements: 
+-Id
+� Name
+� Xpath
+� CSS	Selector
+� Link	Text
+� Partial	Link	Text
+� Class	Name
+� Tag	Name
+finding elements:
+driver.find_element_by_id("Id")
+driver.find_element(By.ID,"ID")
+CSS Selector:
 syntax:
     tag [attribute = 'value']
+for e.g: input[id = 'me'] shortcut: for id use # so, input[id = 'me']= #me = input#me
 -----------------------
 . used for class
 syntax:
-    tag [attribute = 'value']
+    tag [attribute = 'value'] 
+for e.g: input[class = 'my'] = .my = input.my
+Appending classes:
+for multiple classes = .class1.class2.class3
+Using	wildcards	in	CSS	Selectors:
+“^”	->	Represents	the	starting	text
+“$”	->	Represents the	ending	text
+“*”	->	Represents	the	text	contained
+Syntax:
+tag[attribute<special	character>=’value’]
+for e.g: a[class*='class2']
+Finding	Children
+fieldset	->	10	matching	nodes
+Fieldset>table
+fieldset>#product	->	One	matching	node
+fieldset>button	->	One	matching	node
+Fieldset>a
+fieldset>input#name
+for e.g. div>fieldset>#carselect
+Xpath:
+Absolute xpath starts from begin
+Relative xpath:
+Syntax: //tag[@attribute='value']
+single slash: look only after immediate child
+double slash: look after all child nodes
+Using	Text	of	the	element	to	build	xpath
+Finding	Login	link:
+//div[@class='homepage-hero']//a[text()='Enroll	now']
+Using	Contains	to	find	the	elements:
+Syntax: //tag[contains(attribute,	‘value’)]
+Finding	Login	link:
+//div[@id='navbar']//a[contains(text(),'Login')]
+//div[@id='navbar']//a[contains(@class,'navbar-link')	and
+contains(@href,'sign_in')]
+Using	Starts-With	to	find	the	elements:
+Syntax:	//tag[starts-with(attribute,	‘value’)]
+Parent
+Syntax:	xpath-to-some-element//parent::<tag>
+Preceding	Sibling
+Syntax:	xpath-to-some-element//preceding-sibling::<tag>
+Following	Sibling
+Syntax:	xpath-to-some-element//following-sibling::<tag>
