@@ -61,3 +61,5 @@ Preceding	Sibling
 Syntax:	xpath-to-some-element//preceding-sibling::<tag>
 Following	Sibling
 Syntax:	xpath-to-some-element//following-sibling::<tag>
+.text
+.get_attribute

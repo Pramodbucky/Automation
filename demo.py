@@ -10,28 +10,19 @@ class ByDemo():
         driverlocation = CHROME_WEBDRIVER
         os.environ["webdriver.chrome.driver"] = driverlocation
         driver = webdriver.Chrome(driverlocation)
-        driver.get(baseUrl)
-
-        elementById = driver.find_element(By.ID, "bmwcheck")
-
-        if elementById is not None:
-            print("We found an element by Id")
-
-        elementByXpath = driver.find_element(By.XPATH, "//legend[contains(text(),'Radio Button Example')]")
-
-        if elementByXpath is not None:
-            print("We found an element by XPATH")
-
-        elementByLinkText = driver.find_element(By.LINK_TEXT, "Practice")
-
-        if elementByLinkText is not None:
-            print("We found an element by Link Text")
-
-        classelementlist = driver.find_elements(By.CLASS_NAME,"inputs")
-        print(len(classelementlist))
-
-        tagelementlist = driver.find_elements_by_tag_name("tr")
-        print(len(tagelementlist))
+        driver.maximize_window()    # maximize window
+        driver.get(baseUrl)    # get base url
+        title = driver.title    # get title
+        print("Title of site: " + title)
+        currenturl = driver.current_url    # get current url
+        print("Current Url: "+ currenturl)
+        driver.refresh()    # refresh browser
+        driver.get("https://sso.teachable.com/secure/42299/users/sign_in?clean_login=true&reset_purchase_session=1")
+        driver.back()    # get back page
+        print("Backward Pages")
+        driver.forward()    # get forward page
+        print("Forward pages")
+        driver.close()
 
 ff = ByDemo()
 ff.test()

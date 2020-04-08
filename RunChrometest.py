@@ -17,6 +17,7 @@ class Skygeek:
         driver = webdriver.Chrome(driverlocation)
         driver.maximize_window()
         driver.get(skygeektesturl)
+        driver.implicitly_wait(10)
         username = driver.find_element_by_id("UserName")
         username.send_keys(SKY_GEEK_LOGIN_USERNAME)
         password = driver.find_element_by_id("Password")
