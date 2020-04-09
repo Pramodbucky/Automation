@@ -1,6 +1,6 @@
 from selenium import webdriver
 import os
-from config1 import *
+from configlist import *
 from selenium.webdriver.support.select import Select
 import time
 
@@ -13,20 +13,11 @@ class Automation:
         driver.maximize_window()
         driver.get(baseUrl)
         driver.implicitly_wait(10)
-        visitname = driver.find_element_by_id("Koan-magic-carpet-koan-search-bar__input")
+        visitname = driver.find_element_by_css_selector("._1spzot3")
         visitname.send_keys("Nepal")
-        time.sleep(5)
-        checkin = driver.find_element_by_id("checkin_input")
-        checkin.send_keys("Tue, Apr 7")
-        time.sleep(5)
-        checkout = driver.find_element_by_id("checkout_input")
-        checkout.send_keys("Fri, Apr 10")
-        time.sleep(5)
-        # guestdd = driver.find_element_by_id("lp-guestpicker")
-        # guestsel = Select(guestdd)
-        # guestsel.select_by_index(0)
-        # time.sleep(5)
-        search = driver.find_element_by_xpath("//button//span[text()='Search']")
+        clicksomewhere = driver.find_element_by_css_selector("._7p5w4i")
+        clicksomewhere.click()
+        search = driver.find_element_by_xpath("//div[@class='_h6px0p']//span[@class='_m9v25n']")
         search.click()
         time.sleep(10)
         driver.close()
